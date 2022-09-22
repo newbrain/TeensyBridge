@@ -1,0 +1,28 @@
+{
+  "configurations": [
+      {
+          "name": "Pico",
+          "includePath": [
+              "${workspaceFolder}/**",
+              "${workspaceFolder}/../pico-sdk/**",
+              "${workspaceFolder}/../pico-sdk/lib/tinyusb/hw"
+          ],
+          "defines": [
+              "_DEBUG",
+              "UNICODE",
+              "_UNICODE"
+          ],
+          "windowsSdkVersion": "10.0.19041.0",
+          "compilerPath": "C:/SysGCC/arm-eabi/bin/arm-none-eabi-gcc-10.3.1.exe",
+          "cStandard": "c11",
+          "cppStandard": "c++17",
+          "intelliSenseMode": "linux-gcc-arm",
+          "browse": {
+              "limitSymbolsToIncludedHeaders": true
+          },
+          "configurationProvider": "ms-vscode.cmake-tools"
+
+      }
+  ],
+  "version": 4
+}
