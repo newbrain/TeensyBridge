@@ -100,9 +100,13 @@ void tud_cdc_line_coding_cb(uint8_t itf, cdc_line_coding_t const *line_options)
     }
     /* Set the other line parameters NO ERROR CHECKING! */
     uart_parity_t p = line_options->parity;
-    if (p == 2) p = 1;
+    if (p > 2)
+        p = 0;
+    else if (p)
+        p = 2 - p;
+    uint32_t bits = line_options->data_bits == 16 ? 8 : line_options->data_bits;
     uart_set_format(uart1,
-                    line_options->data_bits,
-                    line_options->stop_bits,
-                    line_options->parity);
+                    bits,
+                    1 + (line_options->stop_bits >> 1),
+                    p);
 }
