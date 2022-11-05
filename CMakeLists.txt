@@ -32,8 +32,6 @@ pico_enable_stdio_usb(TeensyBridge 0)
 
 target_include_directories(TeensyBridge PRIVATE .)
 
-add_compile_definitions("PICO_SHARED_IRQ_HANDLER_HIGHEST_ORDER_PRIORITY=0x80")
-
 # Add the standard library to the build
 target_link_libraries(TeensyBridge
     pico_stdlib
