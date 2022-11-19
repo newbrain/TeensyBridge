@@ -21,6 +21,7 @@ pico_sdk_init()
 
 add_executable(TeensyBridge
     TeensyBridge.c
+    get_serial.c
     usb_descriptors.c
     )
 
@@ -35,6 +36,7 @@ target_include_directories(TeensyBridge PRIVATE .)
 # Add the standard library to the build
 target_link_libraries(TeensyBridge
     pico_stdlib
+    pico_unique_id
     tinyusb_device
     tinyusb_board
     hardware_uart
